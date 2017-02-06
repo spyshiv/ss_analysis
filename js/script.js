@@ -1,6 +1,7 @@
 $(document).ready(function() {
     var custom_colors = ['#3498db', '#e74c3c', '#16a085', '#8e44ad', '#2980b9', '#d35400', '#f39c12', '#7f8c8d', '#2ecc71', '#c0392b']
     $('.scrollspy').scrollSpy();
+
     var draw_date_data = function() {
         google.charts.load("current", { packages: ["corechart"] });
         google.charts.setOnLoadCallback(drawChart);
@@ -10,27 +11,8 @@ $(document).ready(function() {
             var chart = new google.visualization.ColumnChart(document.getElementById('date_data'));
             var options = {
                 colors: custom_colors,
-                backgroundColor: { fill: 'transparent' }
+                backgroundColor: { fill: 'transparent' },
             }
-            chart.draw(data, options);
-        }
-    }
-
-    var draw_country_data = function() {
-        google.charts.load('upcoming', { 'packages': ['geochart'] });
-        google.charts.setOnLoadCallback(drawRegionsMap);
-
-        function drawRegionsMap() {
-
-            var data = google.visualization.arrayToDataTable(country_data);
-
-            var options = {
-                colors: custom_colors,
-                backgroundColor: { fill: 'transparent' }
-            };
-
-            var chart = new google.visualization.GeoChart(document.getElementById('country_data'));
-
             chart.draw(data, options);
         }
     }
@@ -192,9 +174,46 @@ $(document).ready(function() {
         }
     }
 
+    var draw_country_data = function() {
+        google.charts.load('upcoming', { 'packages': ['geochart'] });
+        google.charts.setOnLoadCallback(drawRegionsMap);
+
+        function drawRegionsMap() {
+
+            var data = google.visualization.arrayToDataTable(country_data);
+
+            var options = {
+                colors: custom_colors,
+                backgroundColor: { fill: 'transparent' }
+            };
+
+            var chart = new google.visualization.GeoChart(document.getElementById('country_data'));
+
+            chart.draw(data, options);
+        }
+    }
+
+    var draw_city_data = function() {
+        google.charts.load('upcoming', { 'packages': ['geochart'] });
+        google.charts.setOnLoadCallback(drawMarkersMap);
+
+        function drawMarkersMap() {
+            var data = google.visualization.arrayToDataTable(city_data);
+
+            var options = {
+                region: 'IN',
+                displayMode: 'markers',
+                colorAxis: { colors: custom_colors },
+                backgroundColor: { fill: 'transparent' }
+            };
+
+            var chart = new google.visualization.GeoChart(document.getElementById('city_data'));
+            chart.draw(data, options);
+        };
+    }
+
     var init = function() {
         draw_date_data();
-        draw_country_data();
         draw_gender_data();
         draw_keyword_data();
         draw_language_data();
@@ -202,6 +221,8 @@ $(document).ready(function() {
         draw_profile_analytics_data();
         draw_source_data();
         draw_time_data();
+        draw_country_data();
+        draw_city_data();
     }
 
     init();

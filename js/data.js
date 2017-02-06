@@ -1,3 +1,17 @@
+var city_data = [
+    ['City', 'Count'],
+    ['Mumbai', 1001],
+    ['New Delhi', 803],
+    ['Kolkata', 314],
+    ['Navi Mumbai', 274],
+    ['Bangalore', 251],
+    ['Hyderabad', 180],
+    ['Pune', 177],
+    ['Jaipur', 156],
+    ['Ahmadabad', 101],
+    ['Surat', 73]
+];
+
 var country_data = [
     ['Country', 'Count'],
     ['India', 6131],
@@ -13,7 +27,7 @@ var country_data = [
 ];
 
 var date_data = [
-	["Date", "Count"],
+    ["Date", "Count"],
     ["2016-02-01", 12],
     ["2016-02-02", 4],
     ["2016-02-03", 2],
