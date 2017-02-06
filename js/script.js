@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    var custom_colors = ['#3498db', '#e74c3c', '#16a085', '#8e44ad', '#2980b9', '#d35400', '#f39c12', '#7f8c8d', '#2ecc71', '#c0392b']
+    $('.scrollspy').scrollSpy();
     var draw_date_data = function() {
         google.charts.load("current", { packages: ["corechart"] });
         google.charts.setOnLoadCallback(drawChart);
@@ -6,7 +8,11 @@ $(document).ready(function() {
         function drawChart() {
             var data = google.visualization.arrayToDataTable(date_data);
             var chart = new google.visualization.ColumnChart(document.getElementById('date_data'));
-            chart.draw(data);
+            var options = {
+                colors: custom_colors,
+                backgroundColor: { fill: 'transparent' }
+            }
+            chart.draw(data, options);
         }
     }
 
@@ -18,7 +24,10 @@ $(document).ready(function() {
 
             var data = google.visualization.arrayToDataTable(country_data);
 
-            var options = {};
+            var options = {
+                colors: custom_colors,
+                backgroundColor: { fill: 'transparent' }
+            };
 
             var chart = new google.visualization.GeoChart(document.getElementById('country_data'));
 
@@ -35,11 +44,32 @@ $(document).ready(function() {
             var data = google.visualization.arrayToDataTable(gender_data);
 
             var options = {
-                title: 'Gender Analysis'
+                title: 'Gender',
+                colors: custom_colors,
+                backgroundColor: { fill: 'transparent' }
             };
 
             var chart = new google.visualization.PieChart(document.getElementById('gender_data'));
 
+            chart.draw(data, options);
+        }
+    }
+
+    var draw_language_data = function() {
+        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable(language_data);
+
+            var options = {
+                title: 'Languages',
+                pieHole: 0.4,
+                colors: custom_colors,
+                backgroundColor: { fill: 'transparent' }
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('language_data'));
             chart.draw(data, options);
         }
     }
@@ -54,6 +84,8 @@ $(document).ready(function() {
 
             var options = {
                 title: 'Top Used Keywords',
+                colors: custom_colors,
+                backgroundColor: { fill: 'transparent' },
                 chartArea: { width: '50%' },
                 hAxis: {
                     title: 'Total Tweets',
@@ -70,25 +102,7 @@ $(document).ready(function() {
         }
     }
 
-    var draw_language_data = function() {
-        google.charts.load("current", { packages: ["corechart"] });
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable(language_data);
-
-            var options = {
-                title: 'Languages',
-                pieHole: 0.4,
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('language_data'));
-            chart.draw(data, options);
-        }
-    }
-
     var draw_profile_data = function() {
-
         google.charts.load('current', { packages: ['corechart', 'bar'] });
         google.charts.setOnLoadCallback(drawBasic);
 
@@ -98,6 +112,8 @@ $(document).ready(function() {
 
             var options = {
                 title: 'Profile Data',
+                colors: custom_colors,
+                backgroundColor: { fill: 'transparent' },
                 chartArea: { width: '50%' },
                 hAxis: {
                     title: 'Total Tweets',
@@ -114,23 +130,6 @@ $(document).ready(function() {
         }
     }
 
-    var draw_profile_analytics_data = function() {
-         google.charts.load("current", { packages: ["corechart"] });
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable(profile_analytics_data);
-
-            var options = {
-                title: 'Profile Data Analysi',
-                pieHole: 0.4,
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('profile_analytics_data'));
-            chart.draw(data, options);
-        }
-    }
-
     var draw_source_data = function() {
         google.charts.load('current', { packages: ['corechart', 'bar'] });
         google.charts.setOnLoadCallback(drawBasic);
@@ -141,6 +140,8 @@ $(document).ready(function() {
 
             var options = {
                 title: 'Sources',
+                colors: custom_colors,
+                backgroundColor: { fill: 'transparent' },
                 chartArea: { width: '50%' },
                 hAxis: {
                     title: 'Total Tweets',
@@ -157,6 +158,25 @@ $(document).ready(function() {
         }
     }
 
+    var draw_profile_analytics_data = function() {
+        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable(profile_analytics_data);
+
+            var options = {
+                title: 'Profile Data Analysis',
+                colors: custom_colors,
+                backgroundColor: { fill: 'transparent' },
+                pieHole: 0.4,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('profile_analytics_data'));
+            chart.draw(data, options);
+        }
+    }
+
     var draw_time_data = function() {
         google.charts.load("current", { packages: ["corechart"] });
         google.charts.setOnLoadCallback(drawChart);
@@ -164,7 +184,11 @@ $(document).ready(function() {
         function drawChart() {
             var data = google.visualization.arrayToDataTable(time_data);
             var chart = new google.visualization.ColumnChart(document.getElementById('time_data'));
-            chart.draw(data);
+            var options = {
+                colors: custom_colors,
+                backgroundColor: { fill: 'transparent' }
+            }
+            chart.draw(data, options);
         }
     }
 
