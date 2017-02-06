@@ -88,36 +88,45 @@ $(document).ready(function() {
     }
 
     var draw_profile_data = function() {
-        google.charts.load("current", { packages: ["corechart"] });
-        google.charts.setOnLoadCallback(drawChart);
 
-        function drawChart() {
+        google.charts.load('current', { packages: ['corechart', 'bar'] });
+        google.charts.setOnLoadCallback(drawBasic);
+
+        function drawBasic() {
+
             var data = google.visualization.arrayToDataTable(profile_data);
 
             var options = {
                 title: 'Profile Data',
-                pieHole: 0.4,
+                chartArea: { width: '50%' },
+                hAxis: {
+                    title: 'Total Tweets',
+                    minValue: 0
+                },
+                vAxis: {
+                    title: 'Count'
+                }
             };
 
-            var chart = new google.visualization.PieChart(document.getElementById('profile_data'));
+            var chart = new google.visualization.BarChart(document.getElementById('profile_data'));
+
             chart.draw(data, options);
         }
     }
 
     var draw_profile_analytics_data = function() {
-        google.charts.load('current', { 'packages': ['corechart'] });
+         google.charts.load("current", { packages: ["corechart"] });
         google.charts.setOnLoadCallback(drawChart);
 
         function drawChart() {
-
             var data = google.visualization.arrayToDataTable(profile_analytics_data);
 
             var options = {
-                title: 'Profile Data Analysis'
+                title: 'Profile Data Analysi',
+                pieHole: 0.4,
             };
 
             var chart = new google.visualization.PieChart(document.getElementById('profile_analytics_data'));
-
             chart.draw(data, options);
         }
     }
