@@ -462,6 +462,13 @@ var source_data = [
     ['SocialReport.com', 5]
 ];
 
+var sentiment_data = [
+    ['Sentiment', 'Count'],
+    ['Positive', 2575],
+    ['Negative', 393],
+    ['Neutral', 4243]
+]
+
 var time_data = [
     ['Time Analytics', 'Count'],
     ['6:00AM to 8:00AM', 916],

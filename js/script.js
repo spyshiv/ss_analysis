@@ -161,6 +161,25 @@ $(document).ready(function() {
         }
     }
 
+    var draw_sentiment_analytics_data = function() {
+        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable(sentiment_data);
+
+            var options = {
+                title: 'Sentiment Analysis',
+                colors: custom_colors,
+                backgroundColor: { fill: 'transparent' },
+                pieHole: 0.4,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('sentiment_data'));
+            chart.draw(data, options);
+        }
+    }
+
     var draw_time_data = function() {
         google.charts.load("current", { packages: ["corechart"] });
         google.charts.setOnLoadCallback(drawChart);
@@ -222,6 +241,7 @@ $(document).ready(function() {
         draw_profile_data();
         draw_profile_analytics_data();
         draw_source_data();
+        draw_sentiment_analytics_data();
         draw_time_data();
         draw_country_data();
         draw_city_data();

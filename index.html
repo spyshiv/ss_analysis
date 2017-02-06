@@ -5,7 +5,8 @@
     <title>Twiiter Data Analysis</title>
     <link rel="stylesheet" href="css/materialize.min.css">
     <link rel="stylesheet" href="css/main.css">
-    <script type="text/javascript" src="js/loader.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9fwOG0y_1znR-UpWapZ8_r66nWxq2OJU"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 
 <body>
@@ -21,6 +22,7 @@
                         <li><a href="#graphic_wise">Demo Graphic Analysis</a></li>
                         <li><a href="#keywords_wise">Keyword Analysis</a></li>
                         <li><a href="#source_wise">Source Analysis</a></li>
+                        <li><a href="#sentiment_wise">Sentiment Analysis</a></li>
                         <li><a href="#date_wise">Date Wise Analysis</a></li>
                         <li><a href="#country_wise">Country Wise Analysis</a></li>
                         <li><a href="#city_wise">City Wise Analysis</a></li>
@@ -79,6 +81,18 @@
                                 <div class="col l6 m6 s12">
                                     <div class="half_wrapper">
                                         <div id="profile_analytics_data" style="width: auto; height: 400px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="sentiment_wise" class="section scrollspy">
+                        <div class="full_wrapper">
+                            <h5>Sentiment Analysis</h5>
+                            <div class="row">
+                                <div class="col l6 m6 s12 offset-l3 offset-m3">
+                                    <div class="half_wrapper">
+                                        <div id="sentiment_data" style="width: auto; height: 400px;"></div>
                                     </div>
                                 </div>
                             </div>
