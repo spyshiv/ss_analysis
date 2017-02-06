@@ -12,6 +12,8 @@ $(document).ready(function() {
             var options = {
                 colors: custom_colors,
                 backgroundColor: { fill: 'transparent' },
+                'width': data.getNumberOfRows() * 4,
+                'bar': { groupWidth: 4 }
             }
             chart.draw(data, options);
         }
