@@ -10,6 +10,7 @@ $(document).ready(function() {
             var data = google.visualization.arrayToDataTable(date_data);
             var chart = new google.visualization.ColumnChart(document.getElementById('date_data'));
             var options = {
+                legend:'left',
                 colors: custom_colors,
                 backgroundColor: { fill: 'transparent' },
                 'width': data.getNumberOfRows() * 4,
@@ -28,7 +29,8 @@ $(document).ready(function() {
             var data = google.visualization.arrayToDataTable(gender_data);
 
             var options = {
-                title: 'Gender',
+                legend: 'bottom',
+                title: 'Gender Analysis',
                 colors: custom_colors,
                 backgroundColor: { fill: 'transparent' }
             };
@@ -47,7 +49,8 @@ $(document).ready(function() {
             var data = google.visualization.arrayToDataTable(language_data);
 
             var options = {
-                title: 'Languages',
+                legend: 'bottom',
+                title: 'Languages Analysis',
                 pieHole: 0.4,
                 colors: custom_colors,
                 backgroundColor: { fill: 'transparent' }
@@ -68,6 +71,7 @@ $(document).ready(function() {
 
             var options = {
                 title: 'Top Used Keywords',
+                legend:'bottom',
                 colors: custom_colors,
                 backgroundColor: { fill: 'transparent' },
                 chartArea: { width: '50%' },
@@ -95,7 +99,8 @@ $(document).ready(function() {
             var data = google.visualization.arrayToDataTable(profile_data);
 
             var options = {
-                title: 'Profile Data',
+                title: 'Profile Data Analysis',
+                legend:'bottom',
                 colors: custom_colors,
                 backgroundColor: { fill: 'transparent' },
                 chartArea: { width: '50%' },
@@ -123,7 +128,8 @@ $(document).ready(function() {
             var data = google.visualization.arrayToDataTable(source_data);
 
             var options = {
-                title: 'Sources',
+                title: 'Sources Analysis',
+                legend:'bottom',
                 colors: custom_colors,
                 backgroundColor: { fill: 'transparent' },
                 chartArea: { width: '50%' },
@@ -151,6 +157,7 @@ $(document).ready(function() {
 
             var options = {
                 title: 'Profile Data Analysis',
+                legend:'bottom',
                 colors: custom_colors,
                 backgroundColor: { fill: 'transparent' },
                 pieHole: 0.4,
@@ -170,6 +177,7 @@ $(document).ready(function() {
 
             var options = {
                 title: 'Sentiment Analysis',
+                legend:'bottom',
                 colors: custom_colors,
                 backgroundColor: { fill: 'transparent' },
                 pieHole: 0.4,
@@ -188,6 +196,7 @@ $(document).ready(function() {
             var data = google.visualization.arrayToDataTable(time_data);
             var chart = new google.visualization.ColumnChart(document.getElementById('time_data'));
             var options = {
+                legend:'bottom',
                 colors: custom_colors,
                 backgroundColor: { fill: 'transparent' }
             }
